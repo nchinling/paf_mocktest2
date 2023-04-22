@@ -79,6 +79,15 @@ public class TaskController {
 		return user;
 	}
 
+// 	  @GetMapping("/example")
+//   public ModelAndView example(HttpServletResponse response) {
+//     ModelAndView modelAndView = new ModelAndView();
+//     modelAndView.setViewName("example"); // set the view name
+//     modelAndView.addObject("message", "Hello, world!"); // set the model attribute
+//     response.setStatus(HttpServletResponse.SC_OK); // set the HTTP status code
+//     return modelAndView;
+//   }
+
 	private List<Task> getTodoList(HttpSession sess) {
 		// User user = (User)sess.getAttribute(ATTR_USER);
 		List<Task> todoList = (List<Task>) sess.getAttribute("todoList");

@@ -36,6 +36,7 @@ public class TodoService {
     
         // Insert each task in todoList using a loop
         for(Task t : todoList){ 
+        t.setUsername(task.getUsername());
         taskRepo.insertTask(t);
     }
         

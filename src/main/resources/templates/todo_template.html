@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Todo List</title>
+
+</head>
+
+<body>
+  <h1>Todo List</h1>
+
+
+  <form method="POST" action="/save">
+    <table>
+
+      <tr>
+        <td>Username</td>
+      </tr>
+      <tr>
+        <td><input type="text" name="username"/></td>
+      </tr>
+      <tr>
+      
+        <td><button type="submit">Save</button></td>
+      </tr>
+    </table>
+  </form>
+
+ 
+    
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Due Date</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        <tr data-th-each="td: ${todoList}">
+          <td><span data-th-text="${td.description}"></span></td>
+          <td><span data-th-text="${td.priority}"></span></td>
+          <td><span data-th-text="${td.dueDate}"></span></td>
+        </tr>
+      </tbody>
+
+
+    <tfoot>
+
+      <tr>
+        <td colspan="2">
+
+      <form method="POST" action="/add">
+       
+      <tr>
+      
+        <td><input type="text" name="description"/></td>
+        <td>
+          <select name="priority" required>
+            <option value="" disabled selected>Select an item</option>
+            <option value="1">Low</option>
+            <option value="2">Medium</option>
+            <option value="3">High</option>
+          </select>
+        </td>
+        <td><input type="date" name="duedate" /></td>
+    
+      </tr>
+
+      <tr>
+        <td colspan="2" style="padding-top: 10px;">
+          <button type="submit">Add Todo</button>
+        </td>
+      </tr>
+
+      </form>
+
+      </td>
+      </tr>
+    </tfoot>
+
+  </table>
+
+</body>
+
+</html>

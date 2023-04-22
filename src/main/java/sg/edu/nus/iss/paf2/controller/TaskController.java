@@ -64,7 +64,7 @@ public class TaskController {
 		task.setUsername(username);
 		
 		todoSvc.upsertTask(task, todoList);
-
+		sess.invalidate();
 		return "result";
 	}
 

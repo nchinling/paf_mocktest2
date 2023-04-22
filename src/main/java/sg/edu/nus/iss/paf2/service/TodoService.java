@@ -33,11 +33,11 @@ public class TodoService {
             userRepo.insertUser(user);
         }
 
-        // for(task:todoList){ 
-            taskRepo.insertTask(task);
-        // }
-      
     
+        // Insert each task in todoList using a loop
+        for(Task t : todoList){ 
+        taskRepo.insertTask(t);
+    }
         
         // if (!(taskRepo.insertTask(task))) || (!(userRepo.insertUser(user))){
         //     throw new InsertException("Insertion of Todo list was not successful");
